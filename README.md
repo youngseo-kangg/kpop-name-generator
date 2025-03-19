@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kpop Name Generator 🎤✨
 
-## Getting Started
+Annyeonghaseyo! Want to know your K-pop idol name? This fun web application generates a unique K-pop style name just for you! Simply enter your name and discover your destiny in the K-pop world.
 
-First, run the development server:
+## 🌟 Features
+
+- Generate unique K-pop style names
+- Based on real K-pop idol naming patterns
+- Simple and intuitive interface
+- Instant results
+- Share your K-pop name with friends
+
+## 🛠️ Tech Stack
+
+- **Frontend Framework**: [Next.js](https://nextjs.org/)
+- **UI Library**: [React](https://reactjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Package Manager**: [pnpm](https://pnpm.io/)
+- **Data Source**: [Google Spreadsheet API](https://developers.google.com/sheets/api)
+- **Deployment**: [Vercel](https://vercel.com)
+
+## 🚀 Getting Started
+
+1. Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/youngseo-kangg/kpop-name-generator.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Set up environment variables
 
-## Learn More
+```bash
+cp .env.example .env.local
+# Add your Google Spreadsheet API credentials
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Run the development server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Deploy on Vercel
+## 📝 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to open an issue or submit a pull request.
+
+## 💫 Author
+
+- Youngseo Kang
+- GitHub: [@youngseo-kangg](https://github.com/youngseo-kangg/kpop-name-generator)
+
+## 💖 Acknowledgments
+
+- Inspired by the amazing world of K-pop
+- Thanks to all K-pop fans worldwide
