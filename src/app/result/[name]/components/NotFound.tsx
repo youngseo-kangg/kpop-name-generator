@@ -7,9 +7,7 @@ interface NotFoundProps {
 export default function NotFound({ name }: NotFoundProps) {
   return (
     <div className="max-w-2xl mx-auto p-6 text-center">
-      <h1 className="text-3xl font-bold mb-4">
-        ${name} is not yet in the list
-      </h1>
+      <h1 className="text-3xl font-bold mb-4">{name} is not yet in the list</h1>
       <p className="text-lg text-gray-600 mb-6">Maybe that's because ...</p>
       <p className="text-lg text-gray-600 mb-6">We are working on it!</p>
       <Link
@@ -18,9 +16,9 @@ export default function NotFound({ name }: NotFoundProps) {
       >
         Try with different name
       </Link>
-      <button onClick={() => console.log("clicked, modal needed")}>
+      {/* <button onClick={() => console.log("clicked, modal needed")}>
         Or let the developer know!
-      </button>
+      </button> */}
     </div>
   );
 }

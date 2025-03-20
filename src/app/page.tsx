@@ -1,12 +1,19 @@
 import Image from "next/image";
+import getNameData from "./utils/getNameData";
+import NameInput from "@/app/components/nameInput";
+import NameList from "@/app/components/nameList";
 
-export default function Home() {
+export default async function Home() {
+  const nameData = await getNameData();
+
   return (
     <div className="grid grid-rows-[30px_1fr_50px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <h1 className="text-2xl font-bold">kpop name generator</h1>
       <main>
         <p>Annyeonghaseyo!</p>
         <p>What's your kpop name?</p>
+        <NameInput />
+        <NameList data={nameData} />
       </main>
       <footer className="flex flex-col items-center justify-center text-sm">
         <p>© 2025 Youngseo Kang. All rights reserved.</p>

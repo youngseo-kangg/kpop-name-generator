@@ -1,12 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import sheets from "../../../../lib/google-sheets";
+import sheets from "../../../../../lib/google-sheets";
 
 type NameRow = string[];
-type NameData = {
- [key: string]: string;
-};
 
-type ApiResponse = { data: NameData[] } | { error: string };
+type ApiResponse = { data: NameRow } | { error: string };
 
 export async function GET(
     req: NextRequest
@@ -20,7 +17,7 @@ export async function GET(
       throw new Error("Missing SPREADSHEET_ID environment variable");
      }
    
-     const range = "data!A0:O5000";
+     const range = "data!A1:A5000";
      // 2. sheets에서 데이터 get해오기
      const response = await sheets.spreadsheets.values.get({
       spreadsheetId: SPREADSHEET_ID,
@@ -37,20 +34,12 @@ export async function GET(
       );
      }
    
-     // 3-1. 헤더 추출
-     const headers = rows[0].map((header: string) =>
-        header.toLowerCase().replace(/\s+/g, "_")
-     );
-      // 3-2. 데이터 추출
+      // 3-1. 데이터 추출
      const data: NameRow[] = rows.slice(1);
-   
-     // 3-3. 데이터 형식 변환
-     const allData: NameData[] = data.map((row: NameRow) => {
-      return headers.reduce((obj: NameData, header: string, index: number) => {
-       obj[header] = row[index];
-       return obj;
-      }, {} as NameData);
-     });
+
+     // 3-2. 데이터 형식 변환
+     const allData = data.map((row: NameRow) => row[0]);
+     
      // 4. 데이터 반환
      return NextResponse.json<ApiResponse>({ data: allData }, { status: 200 });
     } catch (error) {

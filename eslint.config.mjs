@@ -45,6 +45,8 @@ export default [
         console: true,
         Buffer: true,
         fetch: true,
+        React: true,
+        ReactDOM: true,
       },
     },
     rules: {

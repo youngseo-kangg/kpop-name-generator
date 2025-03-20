@@ -1,9 +1,11 @@
 "use server";
 
-export default async function getNameData(): Promise<string[]> {
+import { NameData } from "@/app/types";
+
+export default async function getAllNameData(): Promise<NameData[]> {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/names/simple`
+      `${process.env.NEXT_PUBLIC_API_URL}/api/names/data`
     );
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);
@@ -14,7 +16,7 @@ export default async function getNameData(): Promise<string[]> {
       throw new Error(jsonResponse.error);
     }
     
-    return jsonResponse.data.sort() as string[];
+    return jsonResponse.data as NameData[];
   } catch (error) {
     console.error("Error fetching data:", error);
     throw error;
