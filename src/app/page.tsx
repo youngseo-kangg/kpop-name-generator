@@ -6,7 +6,6 @@ export default function Home() {
       <h1 className="text-2xl font-bold">kpop name generator</h1>
       <main>
         <p>Annyeonghaseyo!</p>
-
         <p>What's your kpop name?</p>
       </main>
       <footer className="flex flex-col items-center justify-center text-sm">
