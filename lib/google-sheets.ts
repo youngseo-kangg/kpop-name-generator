@@ -4,7 +4,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 // Google Sheets API 설정
-const SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
+const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
 
 // credentials.json을 base64로 디코딩
 const credentialsBase64 = process.env.GOOGLE_APPLICATION_CREDENTIALS || "";
