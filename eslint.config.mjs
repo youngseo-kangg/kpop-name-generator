@@ -40,6 +40,14 @@ export default [
           jsx: true,
         },
       },
+      globals: {
+        process: true,
+        console: true,
+        Buffer: true,
+        fetch: true,
+        React: true,
+        ReactDOM: true,
+      },
     },
     rules: {
       // var 키워드 사용 허용 (예: var x = 1;)

@@ -1,14 +1,26 @@
 # Kpop Name Generator 🎤✨
 
-Annyeonghaseyo! Want to know your K-pop idol name? This fun web application generates a unique K-pop style name just for you! Simply enter your name and discover your destiny in the K-pop world.
+안녕하세요(Annyeonghaseyo)! Want to know your K-pop idol name? This fun web application generates a unique K-pop style name just for you! Simply enter your name and discover your destiny in the K-pop world.
+
+안녕하세요! 당신만의 K-pop 아이돌 이름이 궁금하신가요? 이 웹 애플리케이션은 당신을 위한 특별한 K-pop 스타일의 이름을 생성해드립니다! 이름을 입력하시면 K-pop 세계에서의 당신의 운명을 발견해보실 수 있을거에요.
 
 ## 🌟 Features
 
-- Generate unique K-pop style names
-- Based on real K-pop idol naming patterns
-- Simple and intuitive interface
-- Instant results
-- Share your K-pop name with friends
+- Generate unique K-pop style names (당신만의 특별한 K-pop 스타일 이름 생성)
+- Based on real K-pop idol naming patterns (실제 K-pop 아이돌들의 이름 패턴 기반)
+- Simple and intuitive interface (간단하고 직관적인 인터페이스)
+- Instant results (즉시 결과 확인)
+- Share your K-pop name with friends (친구들과 K-pop 이름 공유하기)
+
+## 📋 Todo
+
+- [x] 🔌 Connect Google Spreadsheet API
+- [ ] 🎯 Complete '/' components, page, layout
+- [ ] 🎯 Complete '/result' components, page, layout
+- [ ] 🎨 Complete styling
+- [ ] 👀 Add view count feature
+- [ ] 📧 Add email contact developer feature
+- [ ] 📤 Add result sharing feature
 
 ## 🛠️ Tech Stack
 
@@ -54,7 +66,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🤝 Contributing
 
-Contributions are welcome! Feel free to open an issue or submit a pull request.
+Contributions are always welcome! Feel free to open an issue or submit a pull request.
+
+컨트리뷰션은 언제나 환영합니다! 이슈를 열거나 풀 리퀘스트를 제출해주세요.
 
 ## 💫 Author
 
