@@ -1,4 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
+
+// components
+import NameCard from "@/app/components/nameCard";
 
 // types
 import { NameData, NameType } from "@/app/types";
@@ -12,54 +16,50 @@ interface NameResultProps {
 }
 
 export default async function NameResult({ data }: NameResultProps) {
-  const { description, subDescription, emojis } = getNameTypeDetails(
-    data.type as NameType
-  );
+  const {
+    description,
+    subDescription,
+    emojis: [firstEmoji, secondEmoji, thirdEmoji],
+  } = getNameTypeDetails(data.type as NameType);
   const count = await incrementNameCount(data.name);
 
   return (
-    <div className="max-w-2xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">Your name is ...</h1>
-      <div className="space-y-4">
+    <div className="max-w-2xl mx-auto p-2 min-[340px]:p-6 text-center">
+      <h1 className="text-3xl font-bold mb-6">Your k-pop idol name is ...</h1>
+      <div className="flex flex-col items-center justify-center">
         <div>
-          <h2 className="text-xl font-semibold mb-2">English name is</h2>
-          <p className="text-lg">{data.name}</p>
+          <Image
+            src={`/type_${data.type}_${data.gender}.webp`}
+            alt="kpop logo"
+            width={250}
+            height={250}
+            className="mx-auto block w-full min-[340px]:w-[250px] min-[340px]:h-[250px]"
+          />
         </div>
-        <div>
-          <h2 className="text-xl font-semibold mb-2">Korean name is</h2>
-          <p className="text-lg">{data.kor_name}</p>
-        </div>
-        <div>
-          <h2 className="text-xl font-semibold mb-2">which means ...</h2>
-          <p className="text-lg">{data.name_explanation}</p>
-        </div>
-        <div>
-          <h2 className="text-xl font-semibold mb-2">
-            your K-pop idol name is
-          </h2>
-          <p className="text-lg">{data.kpop_name}</p>
-        </div>
-        <div>
-          <h2 className="text-xl font-semibold mb-2">
-            you as an K-pop idol is likely to be ...
-          </h2>
-          <p className="text-lg">{description}</p>
-          <p className="text-lg">{subDescription.join(", ")}</p>
-          <p className="text-lg">{emojis.join(" / ")}</p>
-        </div>
-        <div>
-          <h2 className="text-xl font-semibold mb-2">
-            {count} people have searched for this name.
-          </h2>
-        </div>
-        <div>
-          <Link
-            href="/"
-            className="inline-block bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors"
-          >
-            Go back and try with different name
-          </Link>
-        </div>
+      </div>
+      <NameCard size="md" language="ko" color="blue">
+        <p className="text-lg">{data.kor_name}</p>
+      </NameCard>
+      <div className="space-y-2 px-0 pb-5 min-[340px]:px-2">
+        <p>... which means {data.name_explanation.toLowerCase()}</p>
+        <p>you're more likely to be {description.toLowerCase()}.</p>
+        <p>
+          you're also likely to be{" "}
+          {subDescription.map((desc) => desc.toLowerCase()).join(", ")}.
+        </p>
+        <p className="text-5xl">
+          <span>{firstEmoji}</span> <span>{secondEmoji}</span>{" "}
+          <span>{thirdEmoji}</span>
+        </p>
+      </div>
+      <div className="flex gap-2 flex-col items-center justify-center">
+        <Link
+          href="/"
+          className="inline-block bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors"
+        >
+          Go back and try with different name
+        </Link>
+        <p className="text-xs">{count} people have searched for this name.</p>
       </div>
     </div>
   );

@@ -13,7 +13,9 @@ export default async function Home() {
 
   return (
     <div className="grid grid-rows-[30px_1fr_50px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <h1 className="text-2xl font-bold">kpop name generator</h1>
+      <h1 className="text-3xl sm:text-4xl font-bold text-center pt-4">
+        kpop name generator
+      </h1>
       <main>
         <p className="text-center text-base">Annyeonghaseyo! (안녕하세요!)</p>
         <NameInput />

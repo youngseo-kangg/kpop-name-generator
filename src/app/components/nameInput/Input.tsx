@@ -10,9 +10,9 @@ export default function Input() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
-    const name = formData.get("name");
+    const name = formData.get("name") as string;
 
-    router.push(`/result/${name}`);
+    if (name) router.push(`/result/${name.toLowerCase()}`);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,17 +20,20 @@ export default function Input() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center gap-2">
+    <form
+      onSubmit={handleSubmit}
+      className="flex justify-between items-center gap-2 w-full"
+    >
       <input
         type="text"
         name="name"
-        placeholder="Enter your name in English"
-        className="px-4 py-2 border-b-0 focus:border-b focus:border-gray-300 border-transparent outline-none transition-all"
+        placeholder="Enter your name"
+        className="mx-4 py-2 border-b-0 focus:border-b focus:border-gray-300 border-transparent outline-none transition-all"
         onChange={handleInputChange}
       />
       <button
         type="submit"
-        className={`p-2 ${
+        className={`${
           hasText ? "text-red-500 hover:text-red-600" : "text-gray-300"
         } transition-colors`}
         aria-label="Submit"
