@@ -15,7 +15,37 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "kpop name generator",
-  description: "what's your kpop name?",
+  description:
+    "Generate your K-pop idol name based on your real name! Discover what kind of K-pop idol you would be.",
+  keywords: [
+    "kpop",
+    "name generator",
+    "korean name",
+    "kpop idol",
+    "name meaning",
+  ],
+  authors: [{ name: "Youngseo Kang" }],
+  creator: "Youngseo Kang",
+  publisher: "Youngseo Kang",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    title: "kpop name generator",
+    description:
+      "Generate your K-pop idol name based on your real name! Discover what kind of K-pop idol you would be.",
+    type: "website",
+    locale: "en_US",
+    siteName: "kpop name generator",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "kpop name generator",
+    description:
+      "Generate your K-pop idol name based on your real name! Discover what kind of K-pop idol you would be.",
+  },
   icons: {
     apple: [
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },

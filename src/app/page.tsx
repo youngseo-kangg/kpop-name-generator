@@ -1,15 +1,12 @@
 import Image from "next/image";
 
-// components
-import NameInput from "@/app/components/nameInput";
-import NameList from "@/app/components/nameList";
-import TotalCount from "@/app/components/totalCount";
-
 // utils
-import getNameData from "@/app/utils/getNameData";
+import getAllNameData from "./utils/getAllNameData";
+import Search from "./components/search";
+import SearchInput from "./components/search/SearchInput";
 
 export default async function Home() {
-  const nameData = await getNameData();
+  const allNameData = await getAllNameData();
 
   return (
     <div className="grid grid-rows-[30px_1fr_50px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -18,9 +15,8 @@ export default async function Home() {
       </h1>
       <main>
         <p className="text-center text-base">Annyeonghaseyo! (안녕하세요!)</p>
-        <NameInput />
-        <TotalCount />
-        <NameList data={nameData} />
+        <SearchInput data={allNameData} />
+        <Search data={allNameData} />
       </main>
       <footer className="flex flex-col items-center justify-center text-sm">
         <p>© 2025 Youngseo Kang. All rights reserved.</p>

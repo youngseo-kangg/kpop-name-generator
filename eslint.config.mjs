@@ -47,6 +47,8 @@ export default [
         fetch: true,
         React: true,
         ReactDOM: true,
+        document: true,
+        window: true,
       },
     },
     rules: {
