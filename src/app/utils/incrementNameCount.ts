@@ -1,5 +1,3 @@
-"use server";
-
 export const incrementNameCount = async (name: string) => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/count/${name}`, {
         method: 'POST',

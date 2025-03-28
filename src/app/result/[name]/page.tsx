@@ -1,4 +1,7 @@
+// utils
 import getAllNameData from "../../utils/getAllNameData";
+
+// components
 import NameResult from "@/app/result/[name]/components/NameResult";
 import NotFound from "@/app/result/[name]/components/NotFound";
 

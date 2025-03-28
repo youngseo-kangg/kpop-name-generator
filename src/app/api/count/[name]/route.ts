@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import sheets from "../../../../../lib/google-sheets";
+import sheets from "../../../../lib/google-sheets";
 
 type RawData = string[];
 type POSTResponse = { data: number } | { error: string };

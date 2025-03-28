@@ -16,6 +16,8 @@ export type NameData = {
     type: string;
     /** Number of times this name has been generated / 이 이름이 생성된 횟수 */
     count: number;
+    /** Gender of the name / 이름의 성별 */
+    gender: "M" | "F";
 };
 
 /**
