@@ -24,12 +24,11 @@ export default async function NameResult({ data }: NameResultProps) {
   const count = await incrementNameCount(data.name);
 
   return (
-    <div className="max-w-2xl mx-auto p-2 min-[340px]:p-6 text-center">
-      <h1 className="text-3xl font-bold mb-6">Your k-pop idol name is ...</h1>
+    <div className="max-w-2xl mx-auto text-center">
       <div className="flex flex-col items-center justify-center">
         <div>
           <Image
-            src={`/type_${data.type}_${data.gender}.webp`}
+            src={`/type_${data.type}_${data.gender}.png`}
             alt="kpop logo"
             width={250}
             height={250}

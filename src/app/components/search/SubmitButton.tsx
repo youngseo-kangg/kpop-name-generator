@@ -7,8 +7,10 @@ function SubmitButton({ inputAvailable }: SubmitButtonProps) {
     <button
       type="submit"
       className={`${
-        inputAvailable ? "text-red-500 hover:text-red-600" : "text-gray-300"
-      } transition-colors pr-1`}
+        inputAvailable
+          ? "text-red-500 hover:text-red-600 cursor-pointer"
+          : "text-gray-300"
+      } transition-colors pr-1 `}
       aria-label="Submit"
     >
       <svg

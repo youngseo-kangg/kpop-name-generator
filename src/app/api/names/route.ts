@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 // lib 
-import sheets from "../../../../lib/google-sheets";
+import sheets from "../../../lib/google-sheets";
 
 // utils
 import { transformData } from "@/app/utils/transformData";

@@ -18,7 +18,6 @@ type SearchInputProps = {
 export default function SearchInput({ data }: SearchInputProps) {
   const router = useRouter();
   const [input, setInput] = useState("");
-  const [isFocused, setIsFocused] = useState(false);
 
   const nameSuggestions = useMemo(() => {
     return input
@@ -73,16 +72,15 @@ export default function SearchInput({ data }: SearchInputProps) {
             placeholder="Enter your name"
             className="mx-4 py-2 border-b-0 focus:border-b focus:border-gray-300 border-transparent outline-none transition-all"
             onChange={handleInputChange}
-            onFocus={() => setIsFocused(true)}
-            onBlur={() => setIsFocused(false)}
             value={input}
             pattern="[A-Za-z]+"
             title="English letters only"
           />
-          <SubmitButton inputAvailable={input ? true : false} />
+          <SubmitButton
+            inputAvailable={input && /^[a-zA-Z]*$/.test(input) ? true : false}
+          />
         </form>
         {input &&
-          isFocused &&
           (/^[a-zA-Z]*$/.test(input) ? (
             <div className="relative w-[calc(100%-1.875rem)] ml-4 mr-4 overflow-hidden">
               <ul
