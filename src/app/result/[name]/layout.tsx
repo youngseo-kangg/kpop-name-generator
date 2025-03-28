@@ -1,5 +1,7 @@
-import getAllNameData from "@/app/utils/getAllNameData";
 import type { Metadata } from "next";
+
+// utils
+import getAllNameData from "@/app/utils/getAllNameData";
 
 type Props = {
   params: Promise<{ name: string }>;

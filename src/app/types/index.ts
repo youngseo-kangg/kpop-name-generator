@@ -10,8 +10,6 @@ export type NameData = {
     kor_name: string;
     /** Explanation of the name / 이름에 대한 설명 */
     name_explanation: string;
-    /** Generated K-pop style name / 생성된 K-pop 스타일 이름 */
-    kpop_name: string;
     /** Type of the name (A-J) / 이름의 타입 (A-J) */
     type: string;
     /** Number of times this name has been generated / 이 이름이 생성된 횟수 */

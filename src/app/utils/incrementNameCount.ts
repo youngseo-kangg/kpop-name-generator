@@ -1,4 +1,4 @@
-export const incrementNameCount = async (name: string) => {
+const incrementNameCount = async (name: string) => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/count/${name}`, {
         method: 'POST',
         headers: {
@@ -13,3 +13,5 @@ export const incrementNameCount = async (name: string) => {
     const { data } = await res.json();
     return data;
 }
+
+export default incrementNameCount;

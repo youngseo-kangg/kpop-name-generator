@@ -1,9 +1,10 @@
 // utils
-import getAllNameData from "../../utils/getAllNameData";
+import getAllNameData from "@/app/utils/getAllNameData";
+import incrementNameCount from "@/app/utils/incrementNameCount";
 
 // components
-import NameResult from "@/app/result/[name]/components/NameResult";
-import NotFound from "@/app/result/[name]/components/NotFound";
+import NameResult from "./components/NameResult";
+import NotFound from "./components/NotFound";
 
 export default async function Result({
   params,
@@ -20,5 +21,14 @@ export default async function Result({
     return <NotFound name={targetName} />;
   }
 
+  await incrementNameCount(targetNameData.name);
   return <NameResult data={targetNameData} />;
 }
+
+// export async function generateStaticParams() {
+//   const allNameData = await getAllNameData();
+
+//   return allNameData.map((data) => ({
+//     name: data.name,
+//   }));
+// }

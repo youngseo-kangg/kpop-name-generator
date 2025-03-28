@@ -11,8 +11,6 @@ import { NameData } from "@/app/types";
 
 type GETResponse = { data: NameData[] } | { error: string };
 
-export const dynamic = 'force-dynamic'; // 실시간 데이터 필요
-
 export async function GET(
     req: NextRequest
    ): Promise<NextResponse<GETResponse>> {
@@ -23,7 +21,7 @@ export async function GET(
       throw new Error("Missing SPREADSHEET_ID environment variable");
      }
    
-     const range = "data!A1:O5000";
+     const range = "data!A1:G0575";
      // 2. sheets에서 데이터 get해오기
      const response = await sheets.spreadsheets.values.get({
       spreadsheetId: SPREADSHEET_ID,
@@ -44,7 +42,14 @@ export async function GET(
      const [headers, ...data] = rows;
    
      // 3-2. 데이터 형식 변환
-     const modifiedData = transformData<NameData>(headers, data);
+     const modifiedData = transformData<NameData>(headers, data, {
+        name: "string",
+        kor_name: "string",
+        name_explanation: "string",
+        type: "string",
+        count: "number",
+        gender: "string",
+    });
 
      // 4. 데이터 반환
      return NextResponse.json<GETResponse>({ data: modifiedData }, { status: 200 });

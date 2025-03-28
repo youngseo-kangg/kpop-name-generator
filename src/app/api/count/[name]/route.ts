@@ -27,7 +27,7 @@ export async function POST(
         // 3. 현재 데이터 가져오기
         const response = await sheets.spreadsheets.values.get({
             spreadsheetId: SPREADSHEET_ID,
-            range: "data!A1:G5000",
+            range: "data!A1:G0575"
         });
 
         const rows = response.data.values as RawData[];

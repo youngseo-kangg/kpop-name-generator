@@ -9,7 +9,6 @@ import { NameData, NameType } from "@/app/types";
 
 // utils
 import { getNameTypeDetails } from "@/app/utils/getNameType";
-import { incrementNameCount } from "@/app/utils/incrementNameCount";
 
 interface NameResultProps {
   data: NameData;
@@ -21,7 +20,6 @@ export default async function NameResult({ data }: NameResultProps) {
     subDescription,
     emojis: [firstEmoji, secondEmoji, thirdEmoji],
   } = getNameTypeDetails(data.type as NameType);
-  const count = await incrementNameCount(data.name);
 
   return (
     <div className="max-w-2xl mx-auto text-center">
@@ -58,7 +56,9 @@ export default async function NameResult({ data }: NameResultProps) {
         >
           Go back and try with different name
         </Link>
-        <p className="text-xs">{count} people have searched for this name.</p>
+        <p className="text-xs">
+          {data.count + 1} people have searched for this name.
+        </p>
       </div>
     </div>
   );

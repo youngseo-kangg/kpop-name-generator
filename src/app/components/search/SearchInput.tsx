@@ -22,7 +22,7 @@ export default function SearchInput({ data }: SearchInputProps) {
   const nameSuggestions = useMemo(() => {
     return input
       ? data
-          .filter((el) => el.name.includes(input)) // 해당 이름을 포함했는지
+          .filter((el) => el.name.toLowerCase().includes(input.toLowerCase())) // 해당 이름을 포함했는지
           .sort((a, b) => b.count - a.count) // 내림차순
           .slice(0, 5) // 상위 5개
       : [];
