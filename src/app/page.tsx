@@ -5,6 +5,8 @@ import getAllNameData from "./utils/getAllNameData";
 import Search from "./components/search";
 import SearchInput from "./components/search/SearchInput";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const allNameData = await getAllNameData();
 
